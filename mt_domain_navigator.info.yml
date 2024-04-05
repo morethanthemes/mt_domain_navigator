@@ -1,0 +1,7 @@
+name: mt_domain_navigator
+type: module
+description: 'Module for navigating domains in the MT system'
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - block_content:block_content
