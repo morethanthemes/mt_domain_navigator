@@ -2,5 +2,14 @@
     "image": "mcr.microsoft.com/devcontainers/universal:2",
     "features": {
       "ghcr.io/ddev/ddev/install-ddev:latest": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "mhutchie.git-graph"
+            ]
+        }
     }
 }
