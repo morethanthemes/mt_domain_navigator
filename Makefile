@@ -36,10 +36,15 @@ drupal:
 	# Link custom modules
 	mkdir -p demo/web/modules/custom
 	ddev exec ln -s /var/www/html/module /var/www/html/demo/web/modules/custom
+	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush en mt_domain_navigator
 
 down:
 	ddev stop --unlist drupal
 
 drush-cr:
 	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush cr
+
+module-reinstall:
+	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush pm:uninstall mt_domain_navigator -y
+	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush en mt_domain_navigator
     

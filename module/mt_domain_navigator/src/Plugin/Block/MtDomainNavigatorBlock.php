@@ -23,21 +23,35 @@ class MtDomainNavigatorBlock extends BlockBase {
     $config = \Drupal::config('mt_domain_navigator.settings');
     $domain = $config->get('domain');
     $caption = $config->get('caption');
+    $protocol = $config->get('protocol');
 
-    $links = [
-      'base' => [
-        'title' => $this->t('Base+'),
-        'url' => Url::fromUri("http://base.$domain"),
-      ],
-      'groovy' => [
-        'title' => $this->t('Groovy+'),
-        'url' => Url::fromUri("http://groovy.$domain"),
-      ],
-      'flashy' => [
-        'title' => $this->t('Flashy+'),
-        'url' => Url::fromUri("http://flashy.$domain"),
-      ],
-    ];
+    $links_config = $config->get('links');
+    $links = [];
+    $links_config = str_replace('\n', "\n", $links_config);
+    foreach (explode("\n", $links_config) as $link) {
+      list($title, $subdomain) = explode('|', $link);
+      $url = $protocol . '://' . $subdomain . '.' . $domain;
+      
+      $links[] = [
+        'title' => $this->t($title),
+        'url' => Url::fromUri($url),
+      ];
+    }
+
+    // $links = [
+    //   'base' => [
+    //     'title' => $this->t('Base+'),
+    //     'url' => Url::fromUri("http://base.$domain"),
+    //   ],
+    //   'groovy' => [
+    //     'title' => $this->t('Groovy+'),
+    //     'url' => Url::fromUri("http://groovy.$domain"),
+    //   ],
+    //   'flashy' => [
+    //     'title' => $this->t('Flashy+'),
+    //     'url' => Url::fromUri("http://flashy.$domain"),
+    //   ],
+    // ];
 
     return [
       '#theme' => 'links__mt_domain_navigator',

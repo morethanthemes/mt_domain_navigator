@@ -1,2 +1,4 @@
 domain: 'domain.com'
-caption: 'Default caption'
+caption: 'Switch theme:'
+links: 'Base+|base\nGroovy+|groovy\nFlashy+|flashy'
+protocol: 'https'

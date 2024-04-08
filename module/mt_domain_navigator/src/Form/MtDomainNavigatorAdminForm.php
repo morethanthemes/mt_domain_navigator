@@ -30,6 +30,13 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('mt_domain_navigator.settings');
 
+    $form['protocol'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Protocol'),
+      '#default_value' => $config->get('protocol'),
+      '#description' => $this->t('Enter the protocol (http or https)'),
+    ];
+
     $form['domain'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Domain'),
@@ -43,6 +50,14 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
       '#default_value' => $config->get('caption'),
     ];
 
+    $form['links'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Links'),
+      // '#default_value' => $config->get('links'),
+      '#default_value' => str_replace('\n', "\n", $config->get('links')),
+      '#description' => $this->t('Enter each link on a new line in the format: title|url'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -52,8 +67,11 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('mt_domain_navigator.settings')
       ->set('domain', $form_state->getValue('domain'))
-      ->set('caption', $form_state->getValue('caption'))
       ->save();
+      // ->set('protocol', $form_state->getValue('protocol'))
+      // ->set('caption', $form_state->getValue('caption'))
+      // ->set('links', $form_state->getValue('links'))
+      
 
     parent::submitForm($form, $form_state);
   }
