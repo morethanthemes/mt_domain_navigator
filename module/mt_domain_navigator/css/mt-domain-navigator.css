@@ -1,0 +1,11 @@
+.mt-domain-navigator ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .mt-domain-navigator ul li {
+    margin-right: 10px;
+  }

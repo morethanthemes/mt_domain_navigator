@@ -1,0 +1,4 @@
+mt-domain-navigator:
+  css:
+    theme:
+      css/mt-domain-navigator.css: {}
