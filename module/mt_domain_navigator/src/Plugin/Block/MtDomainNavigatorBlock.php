@@ -22,6 +22,7 @@ class MtDomainNavigatorBlock extends BlockBase {
   public function build() {
     $config = \Drupal::config('mt_domain_navigator.settings');
     $domain = $config->get('domain');
+    $caption = $config->get('caption');
 
     $links = [
       'base' => [
@@ -41,6 +42,7 @@ class MtDomainNavigatorBlock extends BlockBase {
     return [
       '#theme' => 'links__mt_domain_navigator',
       '#links' => $links,
+      '#caption' => $caption,
     ];
   }
 

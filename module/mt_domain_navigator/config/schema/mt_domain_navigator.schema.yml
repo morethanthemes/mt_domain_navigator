@@ -1,0 +1,8 @@
+mt_domain_navigator.settings:
+  mapping:
+    domain:
+      type: string
+      label: 'Domain'
+    caption:
+      type: string
+      label: 'Caption'

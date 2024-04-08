@@ -3,6 +3,9 @@
 {% if links %}
   <div class="mt-domain-navigator">
     <ul>
+      {% if caption %}
+        <li>{{ caption }}</li>
+      {% endif %}
       {% for key, link in links %}
         <li>
           <a href="{{ link.url }}">{{ link.title }}</a>

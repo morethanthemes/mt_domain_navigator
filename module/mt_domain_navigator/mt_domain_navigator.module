@@ -6,7 +6,7 @@
 function mt_domain_navigator_theme($existing, $type, $theme, $path) {
   return [
     'links__mt_domain_navigator' => [
-      'variables' => ['links' => NULL],
+      'variables' => ['links' => NULL, 'caption' => NULL],
     ],
   ];
 }
