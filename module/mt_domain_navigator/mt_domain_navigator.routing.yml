@@ -1,0 +1,7 @@
+mt_domain_navigator.admin_form:
+  path: '/admin/config/mt_domain_navigator'
+  defaults:
+    _form: '\Drupal\mt_domain_navigator\Form\MtDomainNavigatorAdminForm'
+    _title: 'MT Domain Navigator settings'
+  requirements:
+    _permission: 'administer site configuration'
