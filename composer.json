@@ -2,6 +2,7 @@
     "name": "morethanthemes/mt_domain_navigator",
     "description": "Module for navigating domains in the MT system",
     "type": "drupal-module",
+    "license": "Apache-2.0",
     "require": {
         "drupal/core": "^8 || ^9 || ^10",
         "drupal/block_content": "*"
