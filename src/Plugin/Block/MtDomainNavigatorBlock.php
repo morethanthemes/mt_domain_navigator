@@ -28,10 +28,20 @@ class MtDomainNavigatorBlock extends BlockBase {
     $links_config = $config->get('links');
     $links = [];
     $links_config = str_replace('\n', "\n", $links_config);
+
+    // Get the current path and query parameters
+    $current_path = \Drupal::service('path.current')->getPath();
+    $current_query = \Drupal::request()->query->all();
+
     foreach (explode("\n", $links_config) as $link) {
       list($title, $subdomain) = explode('|', $link);
-      $url = $protocol . '://' . $subdomain . '.' . $domain;
+      $url = $protocol . '://' . $subdomain . '.' . $domain . $current_path;
       
+      // Add the query parameters if they exist
+      if (!empty($current_query)) {
+        $url .= '?' . http_build_query($current_query);
+      }
+
       // Construct the image URL
       $baseImageUrl = "https://mttpublic.s3.us-east-2.amazonaws.com/assets/webmaker/";
       $imageFilename = $subdomain . ".jpg";
