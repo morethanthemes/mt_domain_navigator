@@ -33,9 +33,13 @@ class MtDomainNavigatorBlock extends BlockBase {
     $current_path = \Drupal::service('path.current')->getPath();
     $current_query = \Drupal::request()->query->all();
 
+    // Get the alias of the current path
+    $alias_manager = \Drupal::service('path.alias_manager');
+    $alias_path = $alias_manager->getAliasByPath($current_path);
+
     foreach (explode("\n", $links_config) as $link) {
       list($title, $subdomain) = explode('|', $link);
-      $url = $protocol . '://' . $subdomain . '.' . $domain . $current_path;
+      $url = $protocol . '://' . $subdomain . '.' . $domain . $alias_path;
       
       // Add the query parameters if they exist
       if (!empty($current_query)) {
