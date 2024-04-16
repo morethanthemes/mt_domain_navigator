@@ -1,20 +1,52 @@
 .mt-domain-navigator {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    padding: 1rem;
-    background: whitesmoke;
+  position: fixed;
+  right: 0;
+  top: 40%;
+  overflow: auto;
+  max-height: 60vh; /* Adjust this value as needed */
+  transition: max-height 0.2s ease-out;
+}
+
+.mt-domain-navigator.collapsed {
+  max-height: 0;
+}
+
+.mt-domain-navigator-toggle {
+  position: fixed;
+  right: 0;
+  top: 35%; /* Adjust this value as needed */
+  cursor: pointer;
 }
 
 .mt-domain-navigator ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .mt-domain-navigator ul li {
-    margin-right: 10px;
-  }
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 308px;
+}
+
+.mt-domain-navigator ul li {
+  border: 1px solid red;
+  width: 100px;
+  height: 75px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mt-domain-navigator ul li a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,16 +1,31 @@
 {{ attach_library('mt_domain_navigator/mt-domain-navigator') }}
 
 {% if links %}
-  <div class="mt-domain-navigator">
+
+  <div class="mt-domain-navigator-toggle" onclick="toggleDomainNavigator()">
+    {% if caption %}
+        <span class="mt-domain-navigator-caption">{{ caption }}</span>
+    {% endif %}
+  </div>
+  <div class="mt-domain-navigator collapsed" id="mtDomainNavigator">
     <ul>
-      {% if caption %}
-        <li class="mt-domain-navigator-caption">{{ caption }}</li>
-      {% endif %}
       {% for key, link in links %}
-        <li>
+        <li style="background-image: url('{{ link.image }}');">
           <a href="{{ link.url }}">{{ link.title }}</a>
         </li>
       {% endfor %}
     </ul>
   </div>
 {% endif %}
+
+
+<script>
+function toggleDomainNavigator() {
+    var navigator = document.getElementById('mtDomainNavigator');
+    if (navigator.classList.contains('collapsed')) {
+        navigator.classList.remove('collapsed');
+    } else {
+        navigator.classList.add('collapsed');
+    }
+}
+</script>
