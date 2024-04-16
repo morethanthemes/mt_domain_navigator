@@ -32,9 +32,15 @@ class MtDomainNavigatorBlock extends BlockBase {
       list($title, $subdomain) = explode('|', $link);
       $url = $protocol . '://' . $subdomain . '.' . $domain;
       
+      // Construct the image URL
+      $baseImageUrl = "https://mttpublic.s3.us-east-2.amazonaws.com/assets/webmaker/";
+      $imageFilename = $subdomain . ".jpg";
+      $imageUrl = $baseImageUrl . $imageFilename;
+
       $links[] = [
         'title' => $this->t($title),
         'url' => Url::fromUri($url),
+        'image' => $imageUrl, // Add the image URL to the link array
       ];
     }
 

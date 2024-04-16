@@ -35,7 +35,7 @@ drupal:
 	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush site:install --db-url=mysql://db:db@db:3306/db --account-name=admin --account-pass=admin -y
 	# Link custom modules
 	mkdir -p demo/web/modules/custom
-	ddev exec ln -s /var/www/html /var/www/html/demo/web/modules/custom/mt_domain_navigator
+	ddev exec ln -s /var/www/html/ /var/www/html/demo/web/modules/custom/mt_domain_navigator
 	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush en mt_domain_navigator
 
 down:
