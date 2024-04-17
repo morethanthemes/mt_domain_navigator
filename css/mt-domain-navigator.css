@@ -7,7 +7,7 @@
   transition: max-width 0.2s ease-out;
   z-index: 1000;
   background: rgba(37, 37, 37, 0.95);
-  padding: .5em;
+  padding: .5rem;
   border-radius: 4px;
 }
 
@@ -17,13 +17,13 @@
 }
 
 .mt-domain-navigator-toggle {
-  font-size: .9em;
+  font-size: .9rem;
   color: white;
   position: fixed;
   right: 0;
   top: 30%; /* Adjust this value as needed */
   cursor: pointer;
-  padding: 0.5em 0.5em 0em;
+  padding: 0.5rem 0.5rem 0rem;
   background-color: rgba(0, 170, 239, .5);
 
   /* Add these lines */
@@ -90,5 +90,5 @@
   align-items: flex-end; /* Align text to the bottom */
   position: relative; /* Add this to position the a element above the pseudo-element */
   z-index: 2;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
