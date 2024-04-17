@@ -6,10 +6,14 @@
   max-height: 60vh; /* Adjust this value as needed */
   transition: max-width 0.2s ease-out;
   z-index: 1000;
+  background: rgba(37, 37, 37, 0.95);
+  padding: .5em;
+  border-radius: 4px;
 }
 
 .mt-domain-navigator.collapsed {
   max-width: 0; /* Change from max-height to max-width */
+  opacity: 0;
 }
 
 .mt-domain-navigator-toggle {
