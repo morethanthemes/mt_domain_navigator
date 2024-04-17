@@ -11,6 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
 class MtDomainNavigatorAdminForm extends ConfigFormBase {
 
   const SETTINGS = 'mt_domain_navigator.settings';
+  const FORM_ID = 'mt_domain_navigator_admin_form';
+
   /**
    * {@inheritdoc}
    */
@@ -24,7 +26,7 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'mt_domain_navigator_admin_form';
+    return static::FORM_ID;
   }
 
   /**
@@ -68,14 +70,12 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->$this->config(static::SETTINGS)
+    $this->config(static::SETTINGS)
+      ->set('protocol', $form_state->getValue('protocol'))
       ->set('domain', $form_state->getValue('domain'))
       ->set('caption', $form_state->getValue('caption'))
+      ->set('links', $form_state->getValue('links'))
       ->save();
-      // ->set('protocol', $form_state->getValue('protocol'))
-      // 
-      // ->set('links', $form_state->getValue('links'))
-      
 
     parent::submitForm($form, $form_state);
   }
