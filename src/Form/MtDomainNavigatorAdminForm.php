@@ -10,11 +10,14 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class MtDomainNavigatorAdminForm extends ConfigFormBase {
 
+  const SETTINGS = 'mt_domain_navigator.settings';
   /**
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
-    return ['mt_domain_navigator.settings'];
+    return [
+      static::SETTINGS,
+    ];
   }
 
   /**
@@ -28,7 +31,7 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('mt_domain_navigator.settings');
+    $config = $this->config(static::SETTINGS);
 
     $form['protocol'] = [
       '#type' => 'textfield',
@@ -65,11 +68,12 @@ class MtDomainNavigatorAdminForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->config('mt_domain_navigator.settings')
+    $this->$this->config(static::SETTINGS)
       ->set('domain', $form_state->getValue('domain'))
+      ->set('caption', $form_state->getValue('caption'))
       ->save();
       // ->set('protocol', $form_state->getValue('protocol'))
-      // ->set('caption', $form_state->getValue('caption'))
+      // 
       // ->set('links', $form_state->getValue('links'))
       
 
