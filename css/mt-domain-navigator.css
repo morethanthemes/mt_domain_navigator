@@ -1,7 +1,7 @@
 .mt-domain-navigator {
   position: fixed;
   right: 0;
-  top: 52%;
+  top: calc(30% + 58px);
   overflow: hidden;
   max-height: 60vh; /* Adjust this value as needed */
   transition: max-width 0.2s ease-out;
@@ -21,7 +21,7 @@
   color: white;
   position: fixed;
   right: 0;
-  top: 42%; /* Adjust this value as needed */
+  top: 30%; /* Adjust this value as needed */
   cursor: pointer;
   padding: 0.5em 0.5em 0em;
   background-color: rgba(0, 170, 239, .5);
