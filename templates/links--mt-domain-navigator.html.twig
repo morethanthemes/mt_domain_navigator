@@ -4,7 +4,7 @@
 
   <div class="mt-domain-navigator-toggle" onclick="toggleDomainNavigator()">
     {% if caption %}
-        <span class="mt-domain-navigator-caption">{{ caption|default('Toggle') }}</span>
+        <i class="fas fa-paint-brush"></i><span class="mt-domain-navigator-caption">{{ caption|default('Toggle') }}</span>
     {% endif %}
   </div>
   <div class="mt-domain-navigator collapsed" id="mtDomainNavigator">

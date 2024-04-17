@@ -77,6 +77,11 @@ class MtDomainNavigatorBlock extends BlockBase {
       '#theme' => 'links__mt_domain_navigator',
       '#links' => $links,
       '#caption' => $caption,
+      '#attached' => [
+        'library' => [
+          'mt_domain_navigator/fontawesome',
+        ],
+      ],
     ];
   }
 

@@ -2,3 +2,8 @@ mt-domain-navigator:
   css:
     theme:
       css/mt-domain-navigator.css: {}
+fontawesome:
+  version: 5.15.4
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css: { type: external }
