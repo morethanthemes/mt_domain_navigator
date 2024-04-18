@@ -1,4 +1,4 @@
-name: mt_domain_navigator
+name: Domain Navigator
 type: module
-description: 'Module for navigating domains in the MT system'
-core_version_requirement: ^8 || ^9 || ^10
+description: 'This module allows for easy navigation between 3rd level domains while keeping the rest of the domain and path the same.'
+core_version_requirement: ^9 || ^10

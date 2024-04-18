@@ -1,4 +1,4 @@
-domain: 'webmaker.plus'
-caption: 'Themes'
-links: 'Base+|base\nClean+|clean\nCorporate+|corporate\nDark+|dark\nFlashy+|flashy\nGroovy+|groovy\nShowcase+|showcase\nSublime+|sublime\nTeam+|team'
-protocol: 'https'
+protocol: https
+domain: webmaker.plus
+caption: Themes
+links: "Base+|base\r\nClean+|clean\r\nCorporate+|corporate\r\nDark+|dark\r\nFlashy+|flashy\r\nGroovy+|groovy\r\nShowcase+|showcase\r\nSublime+|sublime\r\nTeam+|team"

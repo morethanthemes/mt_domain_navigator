@@ -27,7 +27,8 @@ setup:
 
 drupal:
 	# Require Drupal and Drush
-	rm -rf demo/web
+	chmod +Xw demo -R
+	rm -rf demo
 	ddev exec composer create drupal/recommended-project:^10 demo
 	ddev exec composer -d demo require drush/drush
 	# Install stock Drupal with drush
@@ -42,8 +43,11 @@ drupal:
 down:
 	ddev stop --unlist drupal
 
-drush-cr:
+dcr:
 	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush cr
+
+dcex:
+	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush cex
 
 module-reinstall:
 	ddev exec --dir=/var/www/html/demo ./vendor/bin/drush pm:uninstall mt_domain_navigator -y
