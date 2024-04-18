@@ -10,8 +10,8 @@ use Drupal\Core\Url;
  *
  * @Block(
  *   id = "mt_domain_navigator_block",
- *   admin_label = @Translation("MT Domain Navigator Block"),
- *   category = @Translation("Custom"),
+ *   admin_label = @Translation("Domain Navigator"),
+ *   category = @Translation("More than Themes"),
  * )
  */
 class MtDomainNavigatorBlock extends BlockBase {
@@ -37,7 +37,7 @@ class MtDomainNavigatorBlock extends BlockBase {
     $alias_manager = \Drupal::service('path_alias.manager');
     $alias_path = $alias_manager->getAliasByPath($current_path);
 
-    foreach (explode("\n", $links_config) as $link) {
+    foreach (explode("\r\n", $links_config) as $link) {
       list($title, $subdomain) = explode('|', $link);
       $url = $protocol . '://' . $subdomain . '.' . $domain . $alias_path;
       
