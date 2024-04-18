@@ -2,6 +2,9 @@
 
 {% if links %}
 
+  <div class="mt-domain-navigator-toggle mt-buy" onclick="openBuyLink()">
+    <i class="fas fa-shopping-cart"></i><span class="mt-domain-navigator-caption">Buy</span>
+  </div>
   <div class="mt-domain-navigator-toggle" onclick="toggleDomainNavigator()">
     {% if caption %}
         <i class="fas fa-paint-brush"></i><span class="mt-domain-navigator-caption">{{ caption|default('Toggle') }}</span>
@@ -27,5 +30,9 @@ function toggleDomainNavigator() {
     } else {
         navigator.classList.add('collapsed');
     }
+}
+
+function openBuyLink() {
+  window.open('https://webmaker.morethanthemes.com', '_blank');
 }
 </script>

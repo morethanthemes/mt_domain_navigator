@@ -1,7 +1,7 @@
 .mt-domain-navigator {
   position: fixed;
   right: 0;
-  top: calc(30% + 58px);
+  top: calc(30% + 58px + 58px);
   overflow: hidden;
   max-height: 60vh; /* Adjust this value as needed */
   transition: max-width 0.2s ease-out;
@@ -21,7 +21,7 @@
   color: white;
   position: fixed;
   right: 0;
-  top: 30%; /* Adjust this value as needed */
+  top: calc(30% + 58px); /* Adjust this value as needed */
   cursor: pointer;
   padding: 0.5rem 0.5rem 0rem;
   background-color: rgba(0, 170, 239, .5);
@@ -34,8 +34,13 @@
 
   border-radius: 4px;
   z-index: 9999;
+
+  min-width: 74px;
 }
 
+.mt-domain-navigator-toggle.mt-buy{ 
+  top: 30%;
+}
 .mt-domain-navigator-toggle:hover {
   background-color: rgba(0, 170, 239, 1) !important;
   transform: translateX(0);
