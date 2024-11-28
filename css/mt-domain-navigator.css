@@ -98,3 +98,91 @@
   z-index: 2;
   font-size: 0.8rem;
 }
+
+
+/*
+ * Evan's overrides, Nov 28th 2024
+ * https://gist.github.com/evankarageorgos/57852595a968f019d68386c1061a974e
+ */
+
+
+.mt-domain-navigator-toggle {
+    font-size: .9rem;
+    color: white;
+    position: fixed;
+    right: 0;
+    top: calc(30% + 98px);
+    cursor: pointer;
+    padding: 1.2rem 0.75rem 0.8rem;
+    width: 90px;
+    background-color: #202124;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px 0px 0px 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 6px 12px rgba(0, 0, 0, 0.15), 0px 12px 18px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    min-width: 74px;
+    transition: transform 0.12s ease-in-out; 
+}
+
+.mt-domain-navigator-toggle .svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 2em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
+.mt-domain-navigator-caption {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 8px;
+    color: #878DAB;
+}
+
+.mt-domain-navigator-toggle svg {
+    color: #c9cde4;
+}
+
+.mt-domain-navigator-toggle.mt-buy {
+    top: 30%;
+}
+
+
+.mt-domain-navigator-toggle:hover {
+    transform: scale(1.05, 1.05);
+    background-color: rgb(14, 14, 14) !important;
+}
+
+.mt-domain-navigator-toggle:hover .mt-domain-navigator-caption {
+    color: white;
+}
+
+.mt-domain-navigator-toggle:hover svg {
+    color: white;
+}
+
+/* theme selector */
+.mt-domain-navigator {
+    top: calc(30% + 98px + 92px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 6px 12px rgba(0, 0, 0, 0.15), 0px 12px 18px rgba(0, 0, 0, 0.15);
+    border-radius: 12px 0px 0px 12px;
+    padding: 0.4rem;
+}
+
+.mt-domain-navigator ul {
+    max-width: 312px;
+}
+
+.mt-domain-navigator ul li {
+    border-radius: 8px;
+    border: none;
+}
+
+.mt-domain-navigator ul li a {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 1px 4px #313131b0, 0 2px 8px #3131316e;  
+}
